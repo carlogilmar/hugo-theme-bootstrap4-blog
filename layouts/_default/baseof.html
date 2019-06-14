@@ -10,7 +10,7 @@
 
     <link rel="canonical" href="{{ .Permalink }}">
 
-    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <title>Blog de {{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
 
     {{ if eq .Lang "ar" }}
     {{ "<!-- ar -->" | safeHTML }}
@@ -30,25 +30,26 @@
     {{ if .Site.Params.cookie_consent_info_url }}
     {{ partial "cookie-consent.html" . }}
     {{ end }}
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/29fa38b43f.js"></script>
 
     {{ partial "head-custom.html" . }}
   </head>
 
   <body>
 
+    <div class="row" style="background-color: #001C20; height: 15px;"></div>
+    <div class="row" style="background-color: #F3A851; height: 15px;"></div>
     {{ block "masthead" . }}
-    <div class="blog-masthead">
+
+    <div class="blog-masthead" style="background-color: #c2082a;">
       <div class="container">
         <nav class="nav blog-nav">
-          <a class="nav-link {{ if .IsHome }}active{{ end }}" href="{{ .Site.BaseURL | absLangURL }}">{{ i18n "home" }}</a>
-          {{- $currentPage := . -}}
-          {{ range .Site.Menus.navbar }}
-          {{ $menuURL := .URL | absLangURL }}
-          <a class="nav-link{{ if or ($currentPage.IsMenuCurrent "navbar" .) ($currentPage.HasMenuCurrent "navbar" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-          {{ end }}
+          <a class="nav-link {{ if .IsHome }}active{{ end }}" href="{{ .Site.BaseURL | absLangURL }}"><b style="font-family: 'Lobster', cursive;">@carlogilmar</b></a>
         </nav>
       </div>
     </div>
+
     {{ end }}
 
     {{ block "header" . }}
@@ -80,17 +81,22 @@
     {{ end }}
 
     {{ block "footer" . }}
-    <footer class="blog-footer">
-      <p dir="auto">
+    <footer class="blog-footer" style="background-color: #c2082a;">
       {{ if .Site.Copyright }}
-      {{ .Site.Copyright | markdownify }}
+      <p style="color: #FFFFFF;">{{ .Site.Copyright | markdownify }}</p>
       {{ else }}
       Blog template created by <a href="https://twitter.com/mdo">@mdo</a>, ported to Hugo by <a href='https://twitter.com/mralanorth'>@mralanorth</a>.
       {{ end }}
-      </p>
-      <p>
-      <a href="#">{{ i18n "backToTop" }}</a>
-      </p>
+    </footer>
+    <footer style="background-color:#F3A851;">
+      <div class="container flex flex-wrap justify-between">
+        <div class="w-auto align-middle text-sm text-white py-2"></div>
+      </div>
+    </footer>
+    <footer style="background-color:#000000;">
+      <div class="container flex flex-wrap justify-between">
+        <div class="w-auto align-middle text-sm text-white py-2"></div>
+      </div>
     </footer>
     {{ end }}
 
