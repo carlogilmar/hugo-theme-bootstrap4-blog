@@ -1,25 +1,35 @@
 <aside class="col-sm-3 ml-auto blog-sidebar">
   {{ if and (.Site.Params.sidebar) (isset .Site.Params.sidebar "about") }}
-  <section class="sidebar-module sidebar-module-inset">
-    <h4>{{ i18n "about" }}</h4>
-    <p dir="auto">{{ .Site.Params.sidebar.about | markdownify }}</p>
+  <section class="sidebar-module text-center">
+    <img src="{{ "img/carlogilmar.png" | absURL }}" width="100%"/>
+		<p>
+		<a href="https://github.com/carlogilmar" target="_blank">
+			<span style="font-size: 1.5em; color: #000000;"> <i class="fab fa-github"></i></span></a>
+		&nbsp;&nbsp;
+		<a href="https://twitter.com/carlogilmar" target="_blank">
+			<span style="font-size: 1.5em; color: #000000;"><i class="fab fa-twitter"></i></span></a>
+		&nbsp;&nbsp;
+		<a href="https://githubcampus.expert/carlogilmar/" target="_blank">
+			<span style="font-size: 1.5em; color: #000000;"> <i class="fab fa-font-awesome-flag"></i> </span>
+		</a>
+		&nbsp;&nbsp;
+		<a href="https://medium.com/@carlogilmar/" target="_blank">
+			<span style="font-size: 1.5em; color: #000000;"> <i class="fab fa-medium"></i> </span>
+		</a>
+		</p>
+
+		<a href="http://carlogilmar.xyz/" class="btn text-white btn-sm" style="background-color: #c2082a"> <span style="font-size: 1.2em;"> <i class="fas fa-blog" aria-hidden="true"></i> Personal Site </span> </a>
+		<br>
+		<br>
+		<a href="http://carlogilmar.xyz/gallery" class="btn btn-sm text-white" style="background-color: #c2082a"> <span style="font-size: 1.2em;"> <i class="fas fa-camera-retro"></i> Gallery </span> </a>
+
   </section>
   {{ end }}
 
-  {{ if .Site.Params.sidebar }}
-      {{ partialCached "recent.html" .}}
-  {{ end }}
+	{{ if .Site.Params.sidebar }}
+	{{ partialCached "recent.html" .}}
+	{{ end }}
 
-  {{ with .Site.Menus.sidebar }}
-  <section class="sidebar-module">
-    <h4>{{ i18n "links" }}</h4>
-    <ol class="list-unstyled">
-      {{ range . }}
-      <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ol>
-  </section>
-  {{ end }}
 </aside><!-- /.blog-sidebar -->
 
 {{- /* vim: set ts=2 sw=2 et: */}}

@@ -1,9 +1,17 @@
   <section>
-    <h4>{{ i18n "share" }}</h4>
     <nav class="nav sharing-icons">
-      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Share on Facebook"><span class="fa fa-facebook fa-2x" aria-hidden="true"></span></a>
-      <a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}" title="Share on LinkedIn"><span class="fa fa-linkedin fa-2x" aria-hidden="true"></span></a>
-      <a class="nav-item" href="https://twitter.com/intent/tweet?url={{ .Permalink }}&amp;text={{ .Title }}" title="Tweet this"><span class="fa fa-twitter fa-2x"></span></a>
+			<h4 style="font-family: 'Lobster', cursive;">share it</h4> &nbsp; &nbsp; &nbsp;
+      <a class="nav-item" href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" title="Share on Facebook">
+				<span style="font-size: 1.5em; color: #c2082a;"> <i class="fab fa-facebook"></i> </span>
+	 		</a>
+
+			<a class="nav-item" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ .Permalink }}" title="Share on LinkedIn">
+				<span style="font-size: 1.5em; color: #c2082a;"> <i class="fab fa-linkedin"></i> </span>
+			</a>
+
+      <a class="nav-item" href="https://twitter.com/intent/tweet?url={{ .Permalink }}&amp;text={{ .Title }}" title="Tweet this">
+				<span style="font-size: 1.5em; color: #c2082a;"> <i class="fab fa-twitter-square"></i> </span>
+			</a>
     </nav>
   </section>
 
